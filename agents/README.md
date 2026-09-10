@@ -27,7 +27,7 @@ Confirm that the client read both files before execution. Do not assume it loads
 
 ### Claude Code registration
 
-Claude Code supports named agents in `~/.claude/agents/`. Generate its native frontmatter from the canonical profile, preserving one source for the body. This command refuses to overwrite an existing agent; review and back up that file before replacing it during an update.
+Claude Code supports named agents in `~/.claude/agents/`. Generate its native frontmatter from the canonical profile, preserving one source for the body. This command refuses to overwrite an existing agent. For updates, follow the backup and regeneration steps below before running it again.
 
 ```bash
 mkdir -p ~/.claude/agents
@@ -48,7 +48,7 @@ The native `skills` field preloads Autopilot. The profile also requires its refe
 
 ## Update
 
-Update your repository clone to the intended revision as described in [Autopilot updates](../skills/engineering/README.md#update). Review `diff -u ~/.agents/agents/maverick/agent.md agents/maverick/agent.md`, preserve local edits, and repeat the profile copy. Update Autopilot with it. For Claude Code, back up the generated adapter and regenerate it from the updated profile. Start a new session and verify that Maverick and Autopilot resolve to the updated files.
+Update your repository clone to the intended revision as described in [Autopilot updates](../skills/engineering/README.md#update). Review `diff -u ~/.agents/agents/maverick/agent.md agents/maverick/agent.md`, preserve local edits, and repeat the profile copy. Update Autopilot with it. For Claude Code, review local edits and move `~/.claude/agents/maverick.md` to an unused backup path outside `~/.claude/agents/`. Moving preserves the old adapter and frees the destination required by `target.open('x')`; copying a backup alone does not. Confirm the original path no longer exists, then rerun the registration command above to regenerate the adapter from the updated profile. Start a new session and verify that Maverick and Autopilot resolve to the updated files.
 
 ## Optional writing skill
 
