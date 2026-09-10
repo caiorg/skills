@@ -5,6 +5,13 @@ Agent Skills ([agentskills.io](https://agentskills.io)) — portable across Clau
 ## Categories
 
 - [Creativity](skills/creativity/README.md)
+- [Engineering](skills/engineering/README.md)
+
+## Agents
+
+- [Maverick](agents/README.md): mission judgment and communication, powered by Autopilot.
+
+Agent profiles have client-specific loading rules. See the linked installation guides.
 
 ## Install
 
